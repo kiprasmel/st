@@ -1685,8 +1685,9 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og, Line line, int le
 			g.fg = defaultfg;
 			g.bg = defaultrcs;
 		} else {
+			unsigned int tmpcol = g.bg;
 			g.bg = g.fg;
-			g.fg = defaultbg;
+			g.fg = tmpcol;
 		}
 
 		if (IS_TRUECOL(g.bg)) {
